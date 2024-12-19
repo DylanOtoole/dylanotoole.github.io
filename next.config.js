@@ -4,8 +4,8 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/dylan-website',
-  assetPrefix: '/dylan-website',
+  basePath: '',
+  assetPrefix: '',
   eslint: {
     ignoreDuringBuilds: true,
   },
