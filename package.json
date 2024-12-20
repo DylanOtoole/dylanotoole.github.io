@@ -11,6 +11,7 @@
     "deploy": "npm run build && (if not exist out\\.nojekyll echo.> out\\.nojekyll) && gh-pages -d out -t true"
   },
   "dependencies": {
+    "@next/third-parties": "^15.1.2",
     "@radix-ui/react-slot": "^1.1.1",
     "canvas-confetti": "^1.9.3",
     "class-variance-authority": "^0.7.1",

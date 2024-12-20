@@ -1,0 +1,1 @@
+export const GA_MEASUREMENT_ID = 'G-KLMT3F9F9T' // Replace with your actual Measurement ID 
