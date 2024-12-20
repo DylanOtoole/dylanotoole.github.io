@@ -44,17 +44,17 @@ export function Navigation() {
   }, [])
 
   return (
-    <div className="fixed top-0 w-full z-50 px-4 pt-4">
-      <nav className="bg-blue-50 shadow-[4px_4px_0_0_rgba(0,0,0,1)] border-2 border-black rounded-xl">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-12">
+    <div className="fixed top-0 left-0 right-0 w-full z-50 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-1 sm:px-2 lg:px-4 pt-4">
+        <nav className="bg-blue-50 shadow-[4px_4px_0_0_rgba(0,0,0,1)] border-2 border-black rounded-xl">
+          <div className="flex justify-between items-center h-12 px-6">
             {/* Desktop nav */}
-            <div className="hidden sm:flex sm:items-center sm:space-x-4">
+            <div className="hidden sm:flex sm:items-center">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`px-3 py-1 transition-colors text-sm ${
+                  className={`px-5 py-1 transition-colors text-base font-bold ${
                     activeSection === (item.href === '/' ? '' : item.href.slice(1))
                       ? 'bg-black text-white'
                       : 'hover:bg-black hover:text-white'
@@ -77,77 +77,23 @@ export function Navigation() {
             </div>
 
             {/* Social icons */}
-            <div className="hidden sm:flex sm:items-center sm:space-x-4">
+            <div className="hidden sm:flex sm:items-center">
               {socialItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-black hover:text-gray-600 transition-colors"
+                  className="text-black hover:text-gray-600 transition-colors px-4"
                   aria-label={item.name}
                 >
                   <item.icon className="h-5 w-5" />
                 </a>
               ))}
             </div>
-
-            {/* Mobile nav button */}
-            <div className="flex items-center sm:hidden">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="p-2"
-                aria-expanded={isOpen}
-                aria-label="Toggle navigation menu"
-              >
-                {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </button>
-            </div>
           </div>
-        </div>
-
-        {/* Mobile nav menu */}
-        {isOpen && (
-          <div className="sm:hidden">
-            <div className="pt-2 pb-3 space-y-1 bg-blue-50 border-t-2 border-black">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  className="block px-3 py-2 hover:bg-black hover:text-white transition-colors text-sm"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (item.href === '/') {
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    } else {
-                      const target = document.querySelector(item.href);
-                      if (target) {
-                        target.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }
-                    setIsOpen(false)
-                  }}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              {socialItems.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center px-3 py-2 hover:bg-black hover:text-white transition-colors text-sm"
-                  onClick={() => setIsOpen(false)}
-                >
-                  <item.icon className="h-5 w-5 mr-2" />
-                  {item.name}
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
-      </nav>
+        </nav>
+      </div>
     </div>
   )
 }

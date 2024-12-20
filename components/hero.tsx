@@ -3,8 +3,9 @@
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/button'
-import { ArrowDown, Linkedin } from 'lucide-react'
+import { ArrowDown, Linkedin, FileText } from 'lucide-react'
 import confetti from 'canvas-confetti'
+import { FloatingIcon } from '@/components/ui/floating-icon'
 
 export function Hero() {
   const [isAnimated, setIsAnimated] = useState(false)
@@ -56,7 +57,7 @@ export function Hero() {
   }, [])
 
   return (
-    <section className="min-h-screen pt-16 flex items-center bg-gray-50">
+    <section className="min-h-[calc(100vh-4rem)] flex items-center bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           <div className="flex-1 text-center lg:text-left">
@@ -69,45 +70,75 @@ export function Hero() {
                 ref={nameCardRef}
                 className="inline-block bg-yellow-200 text-black px-4 py-2 rounded-xl shadow-[4px_4px_0_0_rgba(0,0,0,1)] border-2 border-black transition-transform duration-200 ease-out"
               >
-                Dylan O'Toole
+                Dylan O'Toole <span className="text-sm text-black-600">(He/Him)</span>
               </span>
             </h1>
             <p className="text-xl mb-8 max-w-2xl mx-auto lg:mx-0">
-              Software Engineer specializing in C++, TypeScript, and React. Passionate about building innovative solutions and improving user experiences.
+              Hey, my name is Dylan and I'm a Software Engineer. Welcome to my portfolio!
             </p>
-            <div className="space-x-4">
-              <Button 
-                className="shadow-[4px_4px_0_0_rgba(0,0,0,1)] border-2 border-black hover:translate-y-1 hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all bg-[#0A66C2] hover:bg-[#004182] text-white animate-bounce"
-                asChild
-              >
-                <a href="https://www.linkedin.com/in/dylanotoole/" target="_blank" rel="noopener noreferrer">
-                  <Linkedin className="mr-2 h-4 w-4" />
-                  Message Me
-                  <span className="ml-2">😊</span>
-                </a>
-              </Button>
-              <Button 
-                variant="outline"
-                className="shadow-[4px_4px_0_0_rgba(0,0,0,1)] border-2 border-black hover:translate-y-1 hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all"
-                asChild
-                onClick={(e) => {
-                  e.preventDefault();
-                  const target = document.querySelector('#experience');
-                  if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-              >
-                <a href="#experience">
-                  View experience
-                  <ArrowDown className="ml-2 h-4 w-4" />
-                </a>
-              </Button>
+            <div className="flex flex-col items-start gap-4">
+              <div className="flex space-x-4">
+                <Button 
+                  className="shadow-[4px_4px_0_0_rgba(0,0,0,1)] border-2 border-black hover:translate-y-1 hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all bg-[#0A66C2] hover:bg-[#004182] text-white animate-bounce"
+                  asChild
+                >
+                  <a href="https://www.linkedin.com/in/dylanotoole/" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="mr-2 h-4 w-4" />
+                    Message Me
+                    <span className="ml-2">😊</span>
+                  </a>
+                </Button>
+                <Button 
+                  variant="outline"
+                  className="shadow-[4px_4px_0_0_rgba(0,0,0,1)] border-2 border-black hover:translate-y-1 hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all"
+                  asChild
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const target = document.querySelector('#experience');
+                    if (target) {
+                      target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                >
+                  <a href="#experience">
+                    View experience
+                    <ArrowDown className="ml-2 h-4 w-4" />
+                  </a>
+                </Button>
+              </div>
+              <div className="pl-[108px]">
+                <Button 
+                  className="shadow-[4px_4px_0_0_rgba(0,0,0,1)] border-2 border-black hover:translate-y-1 hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all bg-pink-100 hover:bg-pink-200 text-black w-40"
+                  asChild
+                >
+                  <a href="/Dylan-O'Toole-resume.pdf" target="_blank" rel="noopener noreferrer">
+                    <FileText className="mr-2 h-4 w-4" />
+                    My Resume
+                  </a>
+                </Button>
+              </div>
             </div>
           </div>
           <div className="flex-1 flex justify-center">
             <div className="relative w-64 h-64 lg:w-96 lg:h-96 transition-transform duration-300 hover:scale-105">
               <div className="absolute inset-0 bg-black rounded-full transform translate-x-4 translate-y-4" />
+              <FloatingIcon 
+                imageSrc="/golf.png"
+                offsetX={-80}
+                offsetY={-20}
+              />
+              <FloatingIcon 
+                imageSrc="/tennis.png"
+                offsetX={80}
+                offsetY={-50}
+                delay={500}
+              />
+              <FloatingIcon 
+                imageSrc="/soccer.jpg"
+                offsetX={-60}
+                offsetY={50}
+                delay={1000}
+              />
               <div className="relative z-10 w-full h-full rounded-full border-4 border-black overflow-hidden bg-white">
                 <Image
                   src="/profile.jpg?height=400&width=400"

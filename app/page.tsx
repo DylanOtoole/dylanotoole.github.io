@@ -1,10 +1,22 @@
-import { Hero } from '@/components/hero'
+'use client'
+
 import { About } from '@/components/about'
+import { Hero } from '@/components/hero'
 import ExperienceSection from '@/components/experience-section'
 import { Work } from '@/components/work'
 import { Blogs } from '@/components/blogs'
 
 const experiences = [
+  {
+    company: "Asana",
+    logo: "/AsanaLogo.jpg",
+    role: "Software Engineer",
+    dateRange: "Sept 2025",
+    location: "Vancouver, BC",
+    description: [],
+    website: "https://asana.com",
+    technologies: ["TypeScript", "Scala", "React", "PostgreSQL", "AWS"]
+  },
   {
     company: "Asana",
     logo: "/AsanaLogo.jpg",
@@ -64,7 +76,7 @@ const experiences = [
 
 export default function Home() {
   return (
-    <main>
+    <main className="pt-20">
       <Hero />
       <About />
       <section id="experience" className="py-20 bg-gray-50">

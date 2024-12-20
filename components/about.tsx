@@ -84,26 +84,35 @@ export function About() {
               onMouseLeave={() => setIsHovered(false)}
             >
               <div className="prose prose-lg max-w-none">
-                <p>
-                  I'm a Computer Engineering student at the University of Toronto, set to graduate in April 2025. With a strong foundation in software development and a passion for innovation, I've had the opportunity to work with leading companies like Asana, Mozilla, and Rocscience.
+                <p className="text-2xl font-extrabold mb-4">
+                  Personal:
                 </p>
-                <p>
-                  My technical skills include C++, C#, TypeScript, JavaScript, React, Python, Scala, Linux, Git, OOP, TCP/IP, and SQL. I'm particularly interested in full-stack development, networking, and creating efficient, user-friendly applications.
+                <ul className="list-disc pl-6 space-y-2 text-xl text-black">
+                  <li>Born and raised in Vancouver, BC.</li>
+                  <li>Competitive tennis player. 🎾</li>
+                  <li>Avid skier. ⛷️</li>
+                  <li>Pizza enthusiast and reviewer. 🍕</li>
+                  <li>Sci-fi reader; <a href="https://www.goodreads.com/book/show/58416952-the-will-of-the-many" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-purple-700">The Will of the Many</a> tops my list.</li>
+                </ul>
+                <div className="mt-6 mb-8">
+                  <Button
+                    className="shadow-[4px_4px_0_0_rgba(0,0,0,1)] border-2 border-black hover:translate-y-1 hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all bg-[#5C3317] hover:bg-[#3B2110] text-white"
+                    asChild
+                  >
+                    <a href="https://www.goodreads.com/user/show/164665279-dylan" target="_blank" rel="noopener noreferrer">
+                      <Book className="mr-2 h-4 w-4" />
+                      Check out my Goodreads
+                    </a>
+                  </Button>
+                </div>
+                <p className="text-2xl font-extrabold mb-4 mt-6">
+                  Professional:
                 </p>
-                <p>
-                  Throughout my internships and projects, I've contributed to improving enterprise tools, enhancing browser performance, and developing innovative solutions in various domains. I'm always eager to take on new challenges and continue learning in the ever-evolving field of software engineering.
-                </p>
-              </div>
-              <div className="mt-6">
-                <Button
-                  className="shadow-[4px_4px_0_0_rgba(0,0,0,1)] border-2 border-black hover:translate-y-1 hover:shadow-[2px_2px_0_0_rgba(0,0,0,1)] transition-all bg-[#5C3317] hover:bg-[#3B2110] text-white"
-                  asChild
-                >
-                  <a href="https://www.goodreads.com/user/show/164665279-dylan" target="_blank" rel="noopener noreferrer">
-                    <Book className="mr-2 h-4 w-4" />
-                    Check out my Goodreads
-                  </a>
-                </Button>
+                <ul className="list-disc pl-6 space-y-2 text-xl text-black">
+                  <li>Computer Engineering @ University of Toronto.</li>
+                  <li>Experience in systems programming, networking, and web development.</li>
+                  <li>Enjoy working in teams and learning from others.</li>
+                </ul>
               </div>
             </div>
           </div>
