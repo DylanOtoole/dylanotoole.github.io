@@ -92,6 +92,7 @@ export function About() {
                   <li>Competitive tennis player. 🎾</li>
                   <li>Avid skier. ⛷️</li>
                   <li>Pizza enthusiast and reviewer. 🍕</li>
+                  <li>Banana connoisseur 🍌</li>
                   <li>Sci-fi reader; <a href="https://www.goodreads.com/book/show/58416952-the-will-of-the-many" target="_blank" rel="noopener noreferrer" className="text-purple-600 hover:text-purple-700">The Will of the Many</a> tops my list.</li>
                 </ul>
                 <div className="mt-6 mb-8">

@@ -101,7 +101,7 @@ export function Hero() {
                   }}
                 >
                   <a href="#experience">
-                    View experience
+                    View Experience
                     <ArrowDown className="ml-2 h-4 w-4" />
                   </a>
                 </Button>
